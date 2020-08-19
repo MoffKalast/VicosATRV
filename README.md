@@ -1,11 +1,11 @@
 # VicosATRV
 
 
-### source -> all packages in the robot ROS workspace
+##### source -> all packages in the robot ROS workspace
 
-### img -> WIP images
+##### img -> WIP images
 
-### CAD -> stl models designed for 3D printing
+##### CAD -> stl models designed for 3D printing
 
 ## Initialization
 
@@ -52,13 +52,15 @@ It can be launched using one of the launch files in the realsense2_camera packag
 
 ## Speakers
 
-The speakers are 
+The speakers are currently connected through the analog audio jack but an alternative should be found to avoid induction noise.
 
 Speaker volume can be adjusted using the following command:
 
     sudo amixer cset numid=1 80%
 
-## Speakers
+## Microphones
+
+THe robot contains two microphones in its 'ears' that are connected to a 'SAMSON Go Mic Connect' stereo microphone.
 
 
 
