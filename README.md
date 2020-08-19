@@ -50,7 +50,7 @@ If it's running first turn of the PC by either running something like:
 
     sudo poweroff
 
-or holding the red button inside the robot beside the green one if a wifi/ssh connection cannot be established.
+or holding the green button inside the robot if a wifi/ssh connection cannot be established (acts as a normal shutdown button, the red one is a reboot button).
 
 Then turn of the motor driver part by accessing the menu on the rear display of the robot, entering the [PWR] submenu and then pressing [Kill PWR].
 
@@ -72,9 +72,8 @@ The package face_led contains a demo script and a topic controlled script that i
 
 One can run them manually like so:
 
-   rosrun face_led led_controller.py
-
-   python demo.py
+    rosrun face_led led_controller.py
+    python demo.py
 
 The led controller subscribes to two topics:
 
