@@ -19,7 +19,7 @@ After that it's set up to connect to ViCoS_5Ghz under the following static IP:
 
 SSH:
 
-    ssh atrv@192.168.33.106
+    ssh atrv@192.168.33.251
 
 The username and password are set to 'atrv' and 'visionm4n'.
 
