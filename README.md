@@ -173,7 +173,7 @@ The dnn_detect package can be launched and remapped to the realsense topics as f
     <param name="class_names" value="background,aeroplane,bicycle,bird,boat,bottle,bus,car,cat,chair,cow,diningtable,dog,horse,motorbike,person,pottedplant,sheep,sofa,train,tvmonitor" />
 ```
 
-An test wip launch can be found in atrv_debug.launch.
+A wip test can be found in atrv_debug.launch.
 
 ## Speakers
 
