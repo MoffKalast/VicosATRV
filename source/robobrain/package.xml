@@ -1,9 +1,9 @@
 <package format="2">
-	<name>face_led</name>
+	<name>robobrain</name>
 	<version>0.0.1</version>
-	<description>Arduino based control of WS2818 rings and led strips.</description>
+	<description>Robot social behaviour.</description>
 
-	<maintainer email="vr4189@student.uni-lj.si">Vid Rijavec</maintainer>
+	<maintainer email="vid.rijavec@gmail.com">Vid Rijavec</maintainer>
 
 	<author>Vid Rijavec</author>
 

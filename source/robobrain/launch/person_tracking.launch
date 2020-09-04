@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="person_tracking" pkg="robobrain" type="person_tracking.py" output="screen"/>
+
+</launch>

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(face_led)
+project(robobrain)
 
 find_package(catkin REQUIRED COMPONENTS
 	roscpp

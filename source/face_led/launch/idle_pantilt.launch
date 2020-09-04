@@ -1,0 +1,7 @@
+<launch>
+
+  	<include file="$(find flir_ptu_driver)/launch/ptu.launch"/>
+	<node pkg="face_led" name="led_controller" type="led_controller.py" output="screen" respawn="true"/>
+	<node pkg="face_led" name="idle_anim" type="idle_anim.py" output="screen" respawn="true"/>
+
+</launch>

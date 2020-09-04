@@ -23,7 +23,7 @@ SSH:
 
 The username and password are set to 'atrv' and 'visionm4n'.
 
-Once inside you can start all of the currently implemneted nodes by running:
+Once inside you can start all of the currently implemneted drivers by running:
 
     roslaunch atrv_mini_ros atrv_full.launch 
 
@@ -39,6 +39,9 @@ The functionalities launched will be:
 
 - soundplay node
 
+The idle movement demo can be launched using (note - also launches flir_ptu_driver):
+
+    roslaunch face_led idle_pantilt.launch
 
 Test driving the robot can be done using:
 
@@ -75,15 +78,17 @@ One can run them manually like so:
     rosrun face_led led_controller.py
     python demo.py
 
-The led controller subscribes to two topics:
+The led controller subscribes to three topics:
 
-    /face_emotion
-    /face_talk_anim
+    /face_emotion (String)
+    /face_eye_anim (Float32MultiArray)
+    /face_talk_anim (Float32)
 
-First one takes a String that sets the overall face disposition our of the following: ["blank", "neutral", "neutral_left", "neutral_right", "furious", "mad", "stupid", "sad", "miserable", "happy", "nauseated", "surprised", "loading"].
+First one takes a string that sets the overall face disposition our of the following: ["blank", "neutral", "neutral_left", "neutral_right", "neutral_happy", "neutral_frown", "furious", "mad", "stupid", "sad", "miserable", "happy", "nauseated", "surprised", "loading"].
 
-The second one takes a Float32 that sets how long the mouth should do a talking animation from the moment the message is received. The animation will be applied to the currently set emotion set by the topic above.
+The second one takes a float that sets how long the mouth should do a talking animation from the moment the message is received. The animation will be applied to the currently set emotion set by the topic above, as will the eye_anim topic, which takes a float array of two variables (left and right eye) that specifies how many seconds each eye should blink (speed of the blink itself). If -1 is sent, the specified eye will not blink.
 
+An idle head movement animation that includes blinking and changing emotions is implemented in idle_anim.py.
 
 ## Realsense D415
 
@@ -152,6 +157,24 @@ Related topics:
 /camera/stereo_module/parameter_updates
 ```
 
+## Robobrain
+
+The package robobrain should contain all robot behaviour related nodes.
+
+## dnn_detect
+
+The dnn_detect package can be launched and remapped to the realsense topics as follows:
+
+```
+  <node pkg="dnn_detect" name="dnn_detect" type="dnn_detect" output="log" respawn="false">
+    <param name="image_transport" value="compressed"/>
+    <param name="publish_images" value="true" />
+    <param name="data_dir" value="$(find dnn_detect)/model"/>
+    <param name="class_names" value="background,aeroplane,bicycle,bird,boat,bottle,bus,car,cat,chair,cow,diningtable,dog,horse,motorbike,person,pottedplant,sheep,sofa,train,tvmonitor" />
+```
+
+An test wip launch can be found in atrv_debug.launch.
+
 ## Speakers
 
 The speakers are currently connected through the analog audio jack but an alternative should be found to avoid induction noise.
@@ -159,6 +182,8 @@ The speakers are currently connected through the analog audio jack but an altern
 Speaker volume can be adjusted using the following command:
 
     sudo amixer cset numid=1 80%
+
+or by using the 'alsamixer' interactive setting board.
 
 ## Microphones
 

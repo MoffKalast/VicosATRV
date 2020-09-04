@@ -4,7 +4,13 @@ ROS led controller for the head of ATRV robot.
 
 # Launch
 
-Launch interactable node with:
+Launch driver node and idle facial expressions command generator:
+
+```
+roslaunch face_led idle.launch
+```
+
+Launch just the interactable node with:
 
 ```
 rosrun face_led led_controller.py
